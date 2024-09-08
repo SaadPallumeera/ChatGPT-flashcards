@@ -7,7 +7,7 @@ def random_cost():
     return Decimal(random.randint(1, 1000))  # Generates a random integer between 1 and 1000 and converts it to a Decimal
 
 from openai import OpenAI
-client = OpenAI(api_key="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")
+client = OpenAI(api_key="") #insert api key to be used
 
 
 def chat(prompt):
