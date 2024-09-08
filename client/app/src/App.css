@@ -1,0 +1,154 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  width: 600px;
+  height: 300px;
+  perspective: 1000px;
+  position: relative;
+}
+
+.card-front, .card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.6s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card-front {
+  background-color: rgb(15, 14, 14);
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.card-back {
+  background-color: #0b0b0b;
+  border: 1px solid rgb(0, 0, 0);
+  transform: rotateY(180deg);
+}
+
+.card:hover .card-front {
+  transform: rotateY(180deg);
+}
+
+.card:hover .card-back {
+  transform: rotateY(0deg);
+}
+
+.flashcard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.flashcard {
+  width: 600px;
+  height: 300px;
+  perspective: 1000px; /* Allows for 3D effect */
+}
+
+.flashcard-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative; /* Changed from absolute to relative */
+}
+
+.flashcard-side {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10px;
+  background-color: rgb(0, 0, 0);
+  transition: opacity 0.3s;
+}
+
+.flashcard-side.front {
+  background-color: #120521;
+}
+
+.flashcard-side.back {
+  background-color: #120521;
+  transform: rotateY(180deg); /* Initially hidden side */
+}
+
+/* Hide the back content initially */
+.flashcard-inner:hover .flashcard-side.back {
+  opacity: 0;
+}
+
+/* Reveal back content on hover */
+.flashcard-inner:hover .flashcard-side.front {
+  opacity: 1;
+}
+
+/* Show the back content when hovering over the flashcard */
+.flashcard-container:hover .flashcard-inner .flashcard-side.back {
+  opacity: 1;
+}
+
+.flashcard button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
